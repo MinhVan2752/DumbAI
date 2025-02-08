@@ -140,7 +140,6 @@ function getBotResponse(userMessage) {
 
   lastUserMessage = userMessage;
 
-  // ✅ Câu trả lời mặc định
   if (userMessage.includes("hello") || userMessage.includes("hi")) {
     return "Hello! How can I assist you?";
   }
@@ -184,6 +183,15 @@ function getBotResponse(userMessage) {
 
   return response;
 }
+
+function displayWelcomeMessage() {
+      const welcomeMessage = "Add '?' into the questions to get supported";
+      addMessage(welcomeMessage, 'bot-message');
+    }
+
+     window.onload = function() {
+      displayWelcomeMessage();
+    };
 
 userInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
